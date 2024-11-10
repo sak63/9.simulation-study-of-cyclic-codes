@@ -1,0 +1,22 @@
+
+n=input ('enter the no of codeward :-');
+k=input('enter the no of msg bits :-');
+y=input('enter the recevied codeword :-');
+g=input('enter the generator polynomial :-');
+[q,s]=deconv(y,g);
+for i=1:n
+    r=rem(s(i),2);
+    if(r==1)
+        s(i)=1;
+    else s(i)=0;
+    end
+end
+s
+if(s==0)
+    ('the recevied codeword contain no error');
+else
+    ('the recevied codeword contain error');
+end
+
+
+
